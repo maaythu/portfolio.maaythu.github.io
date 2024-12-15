@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: rgb(253, 181, 193);
+    --background: pink ;
+    --text-color: #000000;
+    --accent-color: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #FFD6A5 0%, #FFB6C1 100%); /* Soft and easy to see gradient for background */
+    color: var(--text-color); /* Text color for clear readability */
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--background);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-links {
+    display: inline-block;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color); /* Adjust text color for navigation links for clear readability */
+    text-decoration: none; /* Removed underline from navigation links */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    display: block; /* Adjust hover color for navigation links */
+}
+
+.dropbtn {
+    background-color: var(--background);
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-links:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 150px auto 0; /* Increased margin for a more spacious feel */
+    padding: 3rem;
+}
+
+.contact-section {
+    background: white;
+    border-radius: 15px; /* Increased border radius for a more rounded look */
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Increased gap for a more spacious feel */
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; /* Increased gap for a more spacious feel */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Increased gap for a more spacious feel */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Increased gap for a more spacious feel */
+    padding: 2rem;
+    background: var(--background-color);
+    border-radius: 12px; /* Increased border radius for a more rounded look */
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Increased gap for a more spacious feel */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Increased border radius for a more rounded look */
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+button {
+    padding: 1.5rem 3rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px; /* Increased border radius for a more rounded look */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 0;
+        .nav-container {
+            padding: 0 1rem;
+        }
+        .nav-links {
+            gap: 1rem;
+        }
+    }
+
+    .container {
+        margin: 50px auto 0;
+        padding: 1rem;
+    }
+
+    .contact-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
